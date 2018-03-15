@@ -8,13 +8,61 @@ namespace ConsoleApplication1
 {
     class Program
     {
+        private static readonly double a;
+
         static void Main(string[] args)
+
         {
-            Console.BackgroundColor = ConsoleColor.White;
-            Console.ForegroundColor = ConsoleColor.Red;
-            Console.WriteLine("╔═══════╗");
-            Console.WriteLine("║    D M A     ║");
-            Console.WriteLine("╚═══════╝");
+ 
+
+            Console.Write("請輸入體重(公斤)：");
+
+
+            string weight = Console.ReadLine();
+
+
+            Console.Write("請輸入身高(公尺)：");
+
+           string length = Console.ReadLine();
+        
+
+           double bmi = double.Parse(weight) /(double.Parse(length)* double.Parse(length));
+
+            Console.WriteLine("您的BMI值為："+ bmi.ToString());
+
+
+            if (bmi < 17)
+            {
+                Console.WriteLine("體重過輕，不用當兵");
+            }
+            if (bmi < 18.5)
+            {
+                Console.WriteLine("體重過輕但還是要當兵");
+            }
+
+            if (bmi >= 18.5 && bmi < 24)
+            {
+                Console.WriteLine("正常範圍，必須當兵");
+            }
+
+            if (bmi >= 24 && bmi < 31)
+            {
+                Console.WriteLine("過重，可是要當兵");
+            }
+
+
+            if (bmi > 31)
+            {
+                Console.WriteLine("過重，胖到不用當兵");
+            }
+
+
+
+            //  Console.BackgroundColor = ConsoleColor.White;
+            //  Console.ForegroundColor = ConsoleColor.Red;
+            //  Console.WriteLine("╔═══════╗");
+            //  Console.WriteLine("║    D M A     ║");
+            //  Console.WriteLine("╚═══════╝");
 
             // double rate = 4.61931155;
             //  Console.WriteLine("目前人民幣兌台幣：" + rate);
